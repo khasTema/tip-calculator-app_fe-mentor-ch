@@ -1,10 +1,13 @@
 import React from "react";
 
+import Calc from "./js/components/Calc";
+
 function App() {
     return (
-        <div className="App">
-            <h1>Hello React!</h1>
-        </div>
+        <>
+            <h1>SPLI<br/>TTER</h1>
+            <Calc />
+        </>
     )
 }
 
