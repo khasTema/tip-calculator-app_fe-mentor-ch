@@ -8,8 +8,14 @@ import Custom from "./Custom";
 
 function Calc(){
 
-
+    const [bill, setBill] = useState(0)
+    console.log(bill)
+    const [numberOfPeple, setNumberOfPeople] = useState(0)
     const [isCustom, setIsCustom] = useState(false)
+
+    function getPercent(id){
+        console.log("percent" + id)
+    }
 
     const percetRangeArr = [5, 10 , 15, 25 , 50,]
     const buttonsEl = percetRangeArr.map(item => {
@@ -17,16 +23,22 @@ function Calc(){
             <Buttons 
                 key={item}
                 id={item}
-                number={item + "%"}/>
+                number={item + "%"}
+                clickFunction={() => getPercent()}/>
         )
     })
+
+   
 
     return (
         <div className="calc--body">
             <div className="calc--settings">
-                <Input label={"Bill"} />
-                {buttonsEl}
-                {isCustom ? <Custom /> : <Buttons number={"Custom"} clickFunction={() => setIsCustom(true)}/>}
+                <Input label={"Bill"} value={bill} changeFunc={(event) => setBill(event.current.value)}/>
+                <h4 className="label">Select tip %</h4>
+                <div className="buttons">
+                    {buttonsEl}
+                    {isCustom ? <Custom /> : <Buttons number={"Custom"} clickFunction={() => setIsCustom(true)}/>}
+                </div>
                 <Input label={'Number ofPeople'} errorLabel={"Cant't be zero"}/>
             </div>
             <div className="calc--results">

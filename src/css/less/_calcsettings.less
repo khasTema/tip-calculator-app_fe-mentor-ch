@@ -1,0 +1,53 @@
+h4 {
+    margin: 0 0 .5em 0;
+}
+
+span.label {
+    display: none;
+}
+
+.calc--settings {
+    border: 1px solid grey;
+    padding: 1em;
+}
+
+.label {
+    font-size: .8rem;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template: "button button button"
+                    "button button button";
+    grid-gap: 5px;
+}
+.percent-set {
+    background-color: @dark_green;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    text-align: right;
+}
+
+input.custom { 
+    width: 80px;
+    height: 50px;
+    text-align: right;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+@media screen and(min-width: 600px) {
+    .calc--settings {
+        width: 45%;
+    }
+}

@@ -1,7 +1,45 @@
 @import "./less/_variables.less";
 
-body{
-    background-color: @body_background;
-    font-family: @main_font;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    background-color: @body_background;
+    font-family: @main_font;
+    margin: 0;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calc--body {
+    width: 95%;
+    max-width: 750px;
+    background-color: @calc_color;
+    border-radius: 15px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+@import "./less/_calcsettings.less";
+@import "./less/_calcresults.less";
+
+@media screen and(min-width: 600px) {
+    .calc--body {
+        flex-direction: row;
+    }
+}
