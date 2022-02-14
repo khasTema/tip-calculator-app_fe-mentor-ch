@@ -4,7 +4,7 @@ function Result(props){
     return(
         <div className="result">
             <div className="result--description">
-                <h5>Tip Ammount</h5>
+                <h5>{props.description}</h5>
                 <span>/ person</span>
             </div>
             <h4 className="result--numbers">$0.00</h4>

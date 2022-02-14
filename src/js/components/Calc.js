@@ -1,24 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Reset from "./Reset";
 import Result from "./Result";
 import Input from "./Input";
 import Buttons from "./Buttons";
+import Custom from "./Custom";
 
 function Calc(){
+
+
+    const [isCustom, setIsCustom] = useState(false)
+
+    const percetRangeArr = [5, 10 , 15, 25 , 50,]
+    const buttonsEl = percetRangeArr.map(item => {
+        return (
+            <Buttons 
+                key={item}
+                id={item}
+                number={item + "%"}/>
+        )
+    })
+
     return (
         <div className="calc--body">
             <div className="calc--settings">
-                <Input />
-                <Buttons />
-                <Buttons />
-                <Buttons />
-                <Input />
+                <Input label={"Bill"} />
+                {buttonsEl}
+                {isCustom ? <Custom /> : <Buttons number={"Custom"} clickFunction={() => setIsCustom(true)}/>}
+                <Input label={'Number ofPeople'} errorLabel={"Cant't be zero"}/>
             </div>
             <div className="calc--results">
-                <Result />
-                <Result />
-                <Reset />
+                <Result description={'Tip Ammout'}/>
+                <Result description={'Total'}/>
+                <Reset resetFunc={() => console.log("RESET APP")}/>
             </div>
         </div>
     )
