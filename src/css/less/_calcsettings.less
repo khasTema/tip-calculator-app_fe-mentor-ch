@@ -1,0 +1,102 @@
+h4 {
+    margin: 0 0 .5em 0;
+}
+
+span.label {
+    // display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: @error_border;
+    font-weight: 700;
+}
+
+.calc--settings {
+    // border: 1px solid grey;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.calc--settings > h4.label{
+    margin-top: 2em;
+}
+
+label {
+    position: relative;
+}
+
+.label-img {
+    position: absolute;
+    bottom: .2em;
+    left: .5em;
+}
+
+.label {
+    font-size: .7rem;
+    color: @text_color;
+}
+
+.buttons {
+    display: grid;
+    grid-template: "button button"
+                    "button button"
+                    "button button";
+    grid-gap: 10px;
+    margin-bottom: 2em;
+}
+
+.percent-set {
+    background-color: @dark_green;
+    color: @calc_color;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    &:hover, &:focus{
+        background-color: @light_green;
+        color: @dark_green;
+    }
+}
+
+input {
+    width: 100%;
+    height: 35px;
+    text-align: right;
+    border: 2px solid @dark_green;
+    border-radius: 5px;
+    background-color: @input_field;
+    color: @dark_green;
+    font-family: @main_font;
+    font-size: 1.2rem;
+    padding-right: .5em;
+    &:focus,
+    &:active{
+        border-color: @light_green;
+    }
+}
+
+input.custom { 
+    width: 80px;
+    height: 35px;
+    text-align: right;
+    border: 1px solid @dark_green;
+    border-radius: 5px;
+    color: @dark_green;
+    font-family: @main_font;
+    font-size: 1.2rem;
+}
+
+
+@media screen and(min-width: 600px) {
+    .calc--settings {
+        width: 45%;
+        margin-bottom: 0;
+    }
+
+    .buttons {
+        grid-template: "button button button"
+                        "button button button";
+    }
+}

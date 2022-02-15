@@ -1,3 +1,63 @@
-body{
-    background-color: whitesmoke;
+@import "./less/_variables.less";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @body_background;
+    font-family: @main_font;
+    margin: 0;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1em;;
+}
+
+.logo {
+    margin-top: 8em;
+}
+
+.calc--body {
+    width: 95%;
+    max-width: 750px;
+    background-color: @calc_color;
+    border-radius: 15px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.attribution {
+    width: 90%;
+    margin-top: 1em;
+    font-size: .8rem;
+    color: @text_color;
+    text-align: center;
+    margin-bottom: 1em;
+    & a{
+        color: @dark_green;
+    }
+}
+
+
+
+
+
+
+
+@import "./less/_calcsettings.less";
+@import "./less/_calcresults.less";
+
+@media screen and(min-width: 600px) {
+    .calc--body {
+        flex-direction: row;
+    }
 }
