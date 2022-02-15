@@ -10,7 +10,7 @@ export default function Input(props){
             <span className="label">{props.errorLabel}</span>
             <input  type="text" 
                     name="bill" 
-                    placeholder="bill" 
+                    placeholder="0.00" 
                     value={props.value}
                     ref={inputEl}
                     onChange={props.changeFunc}/>
