@@ -7,7 +7,7 @@ function Result(props){
                 <h5>{props.description}</h5>
                 <span>/ person</span>
             </div>
-            <h4 className="result--numbers">$0.00</h4>
+            <h4 className="result--numbers">${props.result}</h4>
         </div>
     )
 }
