@@ -8,7 +8,7 @@ export default function Input(props){
         <label>
             <h4 className="label">{props.label}</h4>
             <span className="label">{props.errorLabel}</span>
-            <input  type="number" 
+            <input  type="text" 
                     name="bill" 
                     placeholder="bill" 
                     value={props.value}
