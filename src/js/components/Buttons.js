@@ -1,5 +1,15 @@
-import React from "react";
+import React, {useRef} from "react";
 
 export default function Buttons(props) {
-    return <button className="percent-set" onClick={() => props.clickFunction(props.id)}>{props.number}</button> 
+
+    const btnEl = useRef(null)
+
+    // function thisClickHandle(params) {
+    //     console.log(btnEl.current.id)
+    // }
+
+    return <button  className="percent-set" 
+                    id={props.id}
+                    ref={btnEl}
+                    onClick={props.clickFunction}>{props.number}</button> 
 }

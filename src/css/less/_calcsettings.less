@@ -24,11 +24,17 @@ span.label {
 }
 .percent-set {
     background-color: @dark_green;
+    color: @calc_color;
+    font-weight: 700;
     border: 1px solid black;
     border-radius: 5px;
     width: 80px;
     height: 50px;
     cursor: pointer;
+    &:hover, &:focus{
+        background-color: @light_green;
+        color: @dark_green;
+    }
 }
 
 input {

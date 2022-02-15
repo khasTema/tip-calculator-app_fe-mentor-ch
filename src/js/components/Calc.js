@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 
 import Reset from "./Reset";
 import Result from "./Result";
@@ -13,22 +13,21 @@ function Calc(){
     const [numberOfPeple, setNumberOfPeople] = useState(0)
     const [isCustom, setIsCustom] = useState(false)
 
-    function getPercent(id){
-        console.log("percent" + id)
+    
+    function getPercent(btn){
+        console.log(btn.target.id)
     }
 
     const percetRangeArr = [5, 10 , 15, 25 , 50,]
     const buttonsEl = percetRangeArr.map(item => {
         return (
-            <Buttons 
+            <Buttons
                 key={item}
                 id={item}
                 number={item + "%"}
-                clickFunction={() => getPercent()}/>
+                clickFunction={getPercent} />
         )
     })
-
-   
 
     return (
         <div className="calc--body">
@@ -49,6 +48,5 @@ function Calc(){
         </div>
     )
 }
-
 
 export default Calc
