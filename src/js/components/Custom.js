@@ -6,7 +6,7 @@ export default function Custom(props) {
 
     const inputEl = useRef(null)
     
-    return <input   type="text" 
+    return <input   type="number" 
                     name="custom" 
                     ref={inputEl}
                     className="custom" 
