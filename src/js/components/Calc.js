@@ -35,8 +35,8 @@ function Calc(){
     })
  
     useEffect(() => {
-        setTipAmmount(Number((bill / 100 * tipPercent / numberOfPeple).toFixed(2)))
-        setTotal(Number(((bill + tipAmmount) / numberOfPeple).toFixed(2)))
+        setTipAmmount((bill / 100 * tipPercent / numberOfPeple).toFixed(2))
+        setTotal(((bill + Number(tipAmmount)) / numberOfPeple).toFixed(2))
     }, [bill, numberOfPeple, tipPercent, tipAmmount])
 
     function resetApp(){
@@ -45,7 +45,7 @@ function Calc(){
         setTipPercent(0)
         setBill('')
         setNumberOfPeople(1)
-        setIsCustom(prev => !prev)
+        setIsCustom(false)
     }
 
     return (
